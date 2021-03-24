@@ -1,14 +1,20 @@
 # Migrate Artifacts to Maven Central
 Script to migrate existing artifacts from JCenter to Maven Central, after the [jcenter/bintray shutdown announcement][shutdown].
 
-To migrate an existing project to Maven Central, library developers will need to do two things:
+This repository contains a script to help migrate an existing project to Maven Central:
 
-1. Update (Gradle) scripts to publish to Maven Central
-2. Migrate all existing artifacts from JCenter to Maven Central
+- ~~Update (Gradle) scripts to publish to Maven Central~~
+- Migrate all existing artifacts from JCenter to Maven Central
 
-This post will only cover the second step and hence assumes that the reader has a [Sonatype account](https://issues.sonatype.org/secure/Dashboard.jspa) and GPG key available.
+Because all secrets are injected into the script, this is ideal to run on a CI environment.
 
-Before using, [learn how to use the script and how it all works][blog].
+To use, make sure `mvn` and `gpg` are installed, fill in the TODO's and run:
+
+```bash
+$ ./migrate_to_mavencentral.sh $BASE64_SIGNING_KEY $SONATYPE_USERNAME $SONATYPE_PASSWORD
+```
+
+For a more detailed explanation, read my accompanying blog post: [Migrate existing artifacts from JCenter to Maven Central][blog]. 
 
 
 [shutdown]: https://jfrog.com/blog/into-the-sunset-bintray-jcenter-gocenter-and-chartcenter/
