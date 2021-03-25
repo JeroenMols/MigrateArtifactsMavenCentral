@@ -109,13 +109,13 @@ for v in ${VERSIONS[@]}; do
 
   # Add required metadata to pom.xml
   sed -e "s/$POM_PLACEHOLDER/$(escape_pom "$POM_REPLACEMENT")/g" \
-      $OUTPUT_DIR/$v/sdk-core-$v.pom |\
+      $OUTPUT_DIR/$v/$ARTIFACT_ID-$v.pom |\
       tr '@' '\n' > temp.txt
-  mv temp.txt $OUTPUT_DIR/$v/sdk-core-$v.pom
+  mv temp.txt $OUTPUT_DIR/$v/$ARTIFACT_ID-$v.pom
 
   mvn gpg:sign-and-deploy-file \
      -Durl=$MAVEN_CENTRAL_STAGINGURL \
      -DrepositoryId=$MAVEN_CENTRAL_REPOID \
-     -DpomFile=$OUTPUT_DIR/$v/sdk-core-$v.pom \
-     -Dfile=$OUTPUT_DIR/$v/sdk-core-$v.$ARTIFACT_EXTENSTION
+     -DpomFile=$OUTPUT_DIR/$v/$ARTIFACT_ID-$v.pom \
+     -Dfile=$OUTPUT_DIR/$v/$ARTIFACT_ID-$v.$ARTIFACT_EXTENSTION
 done
