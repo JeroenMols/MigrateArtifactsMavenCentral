@@ -19,4 +19,4 @@ For a more detailed explanation, read my accompanying blog post: [Migrate existi
 
 [shutdown]: https://jfrog.com/blog/into-the-sunset-bintray-jcenter-gocenter-and-chartcenter/
 [sonatype]: https://issues.sonatype.org/secure/Dashboard.jspa
-[blog]: https://jeroenmols.com/blog/2021/03/24/migrate-artifacts-mavencentral/#4b-add-all-required-info-to-pomxml
+[blog]: https://jeroenmols.com/blog/2021/03/24/migrate-artifacts-mavencentral/
